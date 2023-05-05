@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Search App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="bundle.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="flex justify-center items-center flex-col">
+    <h1 class="text-cyan-500 text-5xl my-6">Music App</h1>
+
+    <form>
+      <input
+        type="text"
+        name="search"
+        id="search"
+        placeholder="Enter song..."
+        class="min-w-80 w-80 p-4 text-gray-600 border-2 border-gray-300 rounded-lg bg-gray-50 focus:border-cyan-500 focus:outline-none"
+      />
+    </form>
+    <div class="no-data"></div>
+
+    <div class="flex flex-col w-9/12 mt-24">
+      <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table class="min-w-full">
+              <thead class="border-b">
+                <tr>
+                  <th>#</th>
+                  <th class="lg:block hidden">Album Cover</th>
+                  <th>Artist Name</th>
+                  <th>Track Name</th>
+                  <th>Track Price</th>
+                  <th>Link</th>
+                </tr>
+              </thead>
+              <tbody class="[&>*:nth-child(odd)]:bg-zinc-200"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
