@@ -17219,8 +17219,10 @@ const baseURL =
 const input = document.querySelector("input");
 const noData = document.querySelector(".no-data");
 const tbody = document.querySelector("tbody")
+const loader = document.querySelector('.loading')
 
 const getData = async (userInput) => {
+  loader.classList.add('loader')
   const response = await fetch(
     baseURL + new URLSearchParams({ term: userInput, entity: "song" }),
     {
@@ -17231,13 +17233,14 @@ const getData = async (userInput) => {
     }
   );
   const data = await response.json();
+  loader.classList.remove('loader')
   return data;
 };
 
 input.addEventListener(
   "input",
   _.debounce(async (e) => {
-    debugger;
+    
     const userInput = e.target.value.trim();
     console.log(userInput);
     let fetchedData = []
